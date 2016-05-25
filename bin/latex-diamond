@@ -1,0 +1,21 @@
+#!/bin/bash
+# Latex-Diamond
+# http://github.com/iandennismiller/latex-diamond
+
+# source $HOME/.agile-diamond
+
+SKEL_TYPE=$1
+DESTINATION=$2
+
+if [[ "${SKEL_TYPE}" == "article" ]]; then
+    echo "create project '${DESTINATION}'"
+    mrbob -w "${VIRTUAL_ENV}/share/skels/article" -O "${DESTINATION}"
+    exit
+fi
+
+echo "Usage: latex-diamond [type] [destination]"
+echo
+echo "available types:"
+echo
+echo "- article"
+echo
